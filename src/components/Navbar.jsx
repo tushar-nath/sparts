@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Welcome Message */}
         <div className="ml-1">
-          <div className="text-4xl h-5 h-12">Welcome Tushar,</div>
+          <div className="text-4xl h-12">Welcome Tushar,</div>
           <div className="text-xl font-light">
             Here is a summary of your business
           </div>
