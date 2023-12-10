@@ -11,7 +11,7 @@ import {
   IoPeople,
   IoCashOutline,
 } from "react-icons/io5";
-import logo from "../images/sparts-logo.jpeg";
+import logo from "../images/sparts-logo.png";
 
 const formatDate = (date) => {
   const options = { weekday: "long", day: "2-digit", month: "short" };
@@ -47,7 +47,7 @@ const Sidebar = () => {
     <aside className="bg-gray-600 text-white font-semibold w-60">
       {/* Upper Logo */}
       <div className="mb-8">
-        <div className="bg-white h-24 p-1">
+        <div className="bg-gray-100 h-24 p-1">
           <div className="ml-2">
             <img src={logo} alt="logo" style={{ width: "180px" }} />
           </div>
@@ -60,7 +60,7 @@ const Sidebar = () => {
         {menuItems.map((item, index) => (
           <div
             key={index}
-            className={`flex items-center mb-8 text-lg ${
+            className={`flex items-center mb-8 ${
               item.name === "More" ? "mt-20" : ""
             }`}
           >
@@ -76,7 +76,7 @@ const Sidebar = () => {
             ) : (
               <>
                 {item.icon && <div className="ml-2">{item.icon}</div>}
-                <a href={item.link} className="ml-3 text-sm">
+                <a href={item.link} className="ml-3 text-md">
                   {item.name}
                 </a>
               </>

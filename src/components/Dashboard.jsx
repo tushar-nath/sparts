@@ -5,7 +5,7 @@ import Table from "./Table";
 
 const Dashboard = () => {
   return (
-    <div className="p-4">
+    <div className="p-4 bg-gray-100 h-full">
       {/* Upper half */}
       <div className="flex mb-4">
         <PieChart />
