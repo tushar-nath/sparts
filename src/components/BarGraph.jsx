@@ -59,7 +59,7 @@ const BarGraph = () => {
   };
 
   return (
-    <div className="flex-1 mr-4">
+    <div className="flex-1 w-1/2">
       <div>
         {/* Upper Tile */}
         <div className="h-20 mb-2 bg-white rounded-sm px-2">

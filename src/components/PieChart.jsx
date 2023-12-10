@@ -38,7 +38,7 @@ const PieChart = () => {
   };
 
   return (
-    <div className="flex-1 mr-4">
+    <div className="flex-1 mr-4 w-96">
       <div>
         {/* Upper Tile */}
         <div className="h-20 mb-2 bg-white rounded-sm">

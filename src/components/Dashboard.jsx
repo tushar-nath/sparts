@@ -7,7 +7,7 @@ const Dashboard = () => {
   return (
     <div className="px-4 bg-gray-100 h-full">
       {/* Upper half */}
-      <div className="flex mb-2">
+      <div className="flex mb-2 w-full">
         <PieChart />
         <BarGraph />
       </div>
