@@ -41,7 +41,7 @@ const PieChart = () => {
     <div className="flex-1 mr-4">
       <div>
         {/* Upper Tile */}
-        <div className="h-22 mb-2 bg-white rounded-sm">
+        <div className="h-20 mb-2 bg-white rounded-sm">
           <div className="h-11 flex p-2">
             <div className="h-5 mr-auto text-md font-light text-gray-400 mt-2 ml-2">
               Active Students
@@ -62,7 +62,7 @@ const PieChart = () => {
         </div>
 
         {/* Lower Tile */}
-        <div className="h-96 bg-white">
+        <div className="h-[26rem] bg-white">
           <div className="bg-white flex h-14 px-4 py-2">
             <div className="mr-auto h-6 text-lg mt-1">Fee Payment Summary</div>
             <div className="ml-4">
@@ -76,7 +76,7 @@ const PieChart = () => {
 
           <hr />
           {/* Pie Chart */}
-          <div className="bg-white h-80 pt-6">
+          <div className="bg-white h-[22rem] pt-6">
             <Pie data={pieChartData} options={pieChartOptions} />
           </div>
         </div>
