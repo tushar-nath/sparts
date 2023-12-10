@@ -16,10 +16,10 @@ const Navbar = () => {
 
         {/* Icons */}
         <div className="flex ml-96">
-          <div className="mr-4 bg-gray-200 h-16 w-16 flex items-center justify-center rounded-full">
+          <div className="mr-4 bg-gray-200 h-16 w-16 flex items-center justify-center rounded-full cursor-pointer">
             <IoSettingsOutline size={32} className="text-2xl" />
           </div>
-          <div className="bg-gray-200 h-16 w-16 flex items-center justify-center rounded-full">
+          <div className="bg-gray-200 h-16 w-16 flex items-center justify-center rounded-full cursor-pointer">
             <IoNotificationsOutline size={32} className="text-2xl" />
           </div>
         </div>
@@ -33,7 +33,7 @@ const Navbar = () => {
               className="rounded-full h-16 w-16"
             />
             <div className="flex-column">
-              <div className="h-8 text-2xl items-center justify-center">
+              <div className="h-8 text-2xl items-center justify-center cursor-pointer">
                 Tushar Nath
               </div>
               <div className="font-light p-1">tusharnath10@gmail.com</div>

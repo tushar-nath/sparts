@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { CiFilter } from "react-icons/ci";
 import { TbDots } from "react-icons/tb";
 
 const Table = () => {
+  const [activeButton, setActiveButton] = useState("All");
+
+  const handleButtonClick = (buttonName) => {
+    setActiveButton(buttonName);
+  };
+
   const getRandomDate = () => {
     const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const randomDay = days[Math.floor(Math.random() * days.length)];
@@ -86,16 +92,36 @@ const Table = () => {
         <div className="text-lg">Upcoming Schedule</div>
         <div className="flex gap-6 ml-4">
           <CiFilter size={28} />
-          <button className="w-24 h-8 bg-gray-600 rounded-lg text-white">
+          <button
+            className={`w-24 h-8 rounded-lg text-white ${
+              activeButton === "All" ? "bg-gray-600" : "bg-gray-400"
+            }`}
+            onClick={() => handleButtonClick("All")}
+          >
             All
           </button>
-          <button className="w-24 h-8 bg-gray-600 rounded-lg text-white">
+          <button
+            className={`w-24 h-8 rounded-lg text-white ${
+              activeButton === "Classes" ? "bg-gray-600" : "bg-gray-400"
+            }`}
+            onClick={() => handleButtonClick("Classes")}
+          >
             Classes
           </button>
-          <button className="w-24 h-8 bg-gray-600 rounded-lg text-white">
+          <button
+            className={`w-24 h-8 rounded-lg text-white ${
+              activeButton === "Meetings" ? "bg-gray-600" : "bg-gray-400"
+            }`}
+            onClick={() => handleButtonClick("Meetings")}
+          >
             Meetings
           </button>
-          <button className="w-24 h-8 bg-gray-600 rounded-lg text-white">
+          <button
+            className={`w-24 h-8 rounded-lg text-white ${
+              activeButton === "Events" ? "bg-gray-600" : "bg-gray-400"
+            }`}
+            onClick={() => handleButtonClick("Events")}
+          >
             Events
           </button>
         </div>
@@ -115,7 +141,7 @@ const Table = () => {
               <th className="py-2 text-left">Time Interval</th>
               <th className="py-2 text-left">Class</th>
               <th className="py-2 text-left">Students</th>
-              <th className="py-2 text-left">View More</th>
+              <th className="py-2 text-left">Information</th>
             </tr>
           </thead>
           <tbody>
@@ -128,8 +154,8 @@ const Table = () => {
                 <td className="py-2 text-left">{entry.timeInterval}</td>
                 <td className="py-2 text-left">{entry.class}</td>
                 <td className="py-2 text-left">{entry.students.join(", ")}</td>
-                <td className="py-2 text-left">
-                  <a href="#">View More</a>
+                <td className="py-2 text-left text-blue-400">
+                  <a href="#">View</a>
                 </td>
               </tr>
             ))}
