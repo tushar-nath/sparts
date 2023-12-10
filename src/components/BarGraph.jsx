@@ -105,6 +105,7 @@ const BarGraph = () => {
                 <Bar data={barChartData1} options={barChartOptions} />
               </div>
             </div>
+            <div className="border-l border-gray-200"></div>
             <div className="w-1/2 flex-column">
               <div className="mt-2 ml-4 text-gray-500">Students</div>
               <div className="px-4 mt-1 h-80">
