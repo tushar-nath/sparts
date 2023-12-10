@@ -9,7 +9,9 @@ const Navbar = () => {
         {/* Welcome Message */}
         <div className="ml-1">
           <div className="text-4xl h-5 h-12">Welcome Tushar,</div>
-          <div className="text-lg">Here is a summary of your business</div>
+          <div className="text-xl font-light">
+            Here is a summary of your business
+          </div>
         </div>
 
         {/* Icons */}
@@ -34,7 +36,7 @@ const Navbar = () => {
               <div className="h-8 text-2xl items-center justify-center">
                 Tushar Nath
               </div>
-              <div>tusharnath10@gmail.com</div>
+              <div className="font-light mt-1">tusharnath10@gmail.com</div>
             </div>
           </div>
         </div>

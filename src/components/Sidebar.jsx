@@ -51,7 +51,7 @@ const Sidebar = () => {
           <div className="ml-2">
             <img src={logo} alt="logo" style={{ width: "180px" }} />
           </div>
-          <p className="text-black text-lg ml-10 w-36">{currentDate}</p>
+          <p className="text-black font-light text-lg ml-10 w-36">{currentDate}</p>
         </div>
       </div>
 
