@@ -5,9 +5,9 @@ import Table from "./Table";
 
 const Dashboard = () => {
   return (
-    <div className="p-4 bg-gray-100 h-full">
+    <div className="px-4 bg-gray-100 h-full">
       {/* Upper half */}
-      <div className="flex mb-4">
+      <div className="flex mb-2">
         <PieChart />
         <BarGraph />
       </div>

@@ -36,7 +36,7 @@ const Navbar = () => {
               <div className="h-8 text-2xl items-center justify-center">
                 Tushar Nath
               </div>
-              <div className="font-light mt-1">tusharnath10@gmail.com</div>
+              <div className="font-light p-1">tusharnath10@gmail.com</div>
             </div>
           </div>
         </div>
