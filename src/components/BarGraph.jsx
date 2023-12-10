@@ -4,8 +4,8 @@ const BarGraph = () => {
   return (
     <div className="flex-1">
       <div className="bg-white p-4 rounded shadow">
-        <h2 className="text-lg font-semibold mb-4">Chart 2</h2>
-        {/* Your chart 2 content goes here */}
+        <div className="h-10 bg-red-600 mb-4"></div>
+        <div className="h-96 bg-green-600"></div>
       </div>
     </div>
   );

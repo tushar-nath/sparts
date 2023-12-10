@@ -5,11 +5,9 @@ import Table from "./Table";
 
 const Dashboard = () => {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-semibold mb-4">Dashboard</h1>
-
+    <div className="p-4">
       {/* Upper half */}
-      <div className="flex mb-8">
+      <div className="flex mb-4">
         <PieChart />
         <BarGraph />
       </div>

@@ -1,27 +1,88 @@
-// src/components/Sidebar.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
+import {
+  FaUniversity,
+  FaComments,
+  FaChalkboardTeacher,
+  FaCalendarAlt,
+} from "react-icons/fa";
+import {
+  IoStatsChartOutline,
+  IoSearch,
+  IoPeople,
+  IoCashOutline,
+} from "react-icons/io5";
+import logo from "../images/sparts-logo.jpeg";
+
+const formatDate = (date) => {
+  const options = { weekday: "long", day: "2-digit", month: "short" };
+  return new Date(date).toLocaleDateString("en-US", options);
+};
 
 const Sidebar = () => {
+  const [currentDate, setCurrentDate] = useState("");
+
+  useEffect(() => {
+    const today = new Date();
+    setCurrentDate(formatDate(today));
+  }, []);
+
+  const menuItems = [
+    { name: "Main Menu", link: "/main-menu" },
+    { name: "Dashboard", icon: <IoStatsChartOutline />, link: "/dashboard" },
+    { name: "Academy Management", icon: <FaUniversity />, link: "/academy" },
+    { name: "More", link: "/more" },
+    {
+      name: "Search",
+      icon: <IoSearch className="text-slate-400 ml-2" />,
+      placeholder: "Search students by name",
+    },
+    { name: "Students", icon: <IoPeople />, link: "/students" },
+    { name: "Fee Payments", icon: <IoCashOutline />, link: "/fees" },
+    { name: "Enquiries", icon: <FaComments />, link: "/enquiries" },
+    { name: "Coaches", icon: <FaChalkboardTeacher />, link: "/coaches" },
+    { name: "Schedule", icon: <FaCalendarAlt />, link: "/schedule" },
+  ];
+
   return (
-    <aside className="bg-gray-900 text-white p-20">
+    <aside className="bg-gray-600 text-white font-semibold w-60">
+      {/* Upper Logo */}
       <div className="mb-8">
-        <h2 className="text-lg font-semibold mb-4">Main Menu</h2>
-        <ul>
-          <li className="mb-2">Dashboard</li>
-          <li className="mb-2">Academy Menu</li>
-        </ul>
+        <div className="bg-white h-24 p-1">
+          <div className="ml-2">
+            <img src={logo} alt="logo" style={{ width: "180px" }} />
+          </div>
+          <p className="text-black text-lg ml-10 w-36">{currentDate}</p>
+        </div>
       </div>
 
-      <div className="mb-8">
-        <h2 className="text-lg font-semibold mb-4">More</h2>
-        <ul>
-          <li className="mb-2">Search bar</li>
-          <li className="mb-2">Student</li>
-          <li className="mb-2">Fee Payment</li>
-          <li className="mb-2">Enquiries</li>
-          <li className="mb-2">Coaches</li>
-          <li>Schedule</li>
-        </ul>
+      {/* Lower Links */}
+      <div className="p-2">
+        {menuItems.map((item, index) => (
+          <div
+            key={index}
+            className={`flex items-center mb-8 text-lg ${
+              item.name === "More" ? "mt-20" : ""
+            }`}
+          >
+            {item.name === "Search" ? (
+              <div className="ml-2 p-1 bg-white flex items-center rounded-2xl">
+                {item.icon}
+                <input
+                  type="text"
+                  placeholder={item.placeholder}
+                  className="text-sm bg-transparent px-2 py-1 rounded outline-none font-light"
+                />
+              </div>
+            ) : (
+              <>
+                {item.icon && <div className="ml-2">{item.icon}</div>}
+                <a href={item.link} className="ml-3 text-sm">
+                  {item.name}
+                </a>
+              </>
+            )}
+          </div>
+        ))}
       </div>
     </aside>
   );
