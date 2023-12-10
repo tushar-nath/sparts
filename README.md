@@ -1,4 +1,4 @@
-`# SPARTS Dashboard
+# SPARTS Dashboard
 
 Welcome to the SPARTS Dashboard – a React app built with Tailwind CSS.
 
