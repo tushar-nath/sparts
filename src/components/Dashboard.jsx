@@ -1,7 +1,7 @@
-import React from "react";
-import PieChart from "./PieChart";
-import BarGraph from "./BarGraph";
-import Table from "./Table";
+import React from 'react'
+import PieChart from './PieChart'
+import BarGraph from './BarGraph'
+import Table from './Table'
 
 const Dashboard = () => {
   return (
@@ -15,7 +15,7 @@ const Dashboard = () => {
       {/* Lower half */}
       <Table />
     </div>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard

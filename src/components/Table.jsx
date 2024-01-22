@@ -1,69 +1,66 @@
-import React, { useState } from "react";
-import { CiFilter } from "react-icons/ci";
-import { TbDots } from "react-icons/tb";
+import React, { useState } from 'react'
+import { CiFilter } from 'react-icons/ci'
+import { TbDots } from 'react-icons/tb'
 
 const Table = () => {
-  const [activeButton, setActiveButton] = useState("All");
+  const [activeButton, setActiveButton] = useState('All')
 
   const handleButtonClick = (buttonName) => {
-    setActiveButton(buttonName);
-  };
+    setActiveButton(buttonName)
+  }
 
   const getRandomDate = () => {
-    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    const randomDay = days[Math.floor(Math.random() * days.length)];
-    const randomDate = Math.floor(Math.random() * 30) + 1;
-    const randomMonth = "Sep";
-    return `${randomDay}, ${String(randomDate).padStart(
-      2,
-      "0"
-    )} ${randomMonth}`;
-  };
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    const randomDay = days[Math.floor(Math.random() * days.length)]
+    const randomDate = Math.floor(Math.random() * 30) + 1
+    const randomMonth = 'Sep'
+    return `${randomDay}, ${String(randomDate).padStart(2, '0')} ${randomMonth}`
+  }
 
   const getRandomTimeInterval = () => {
-    const randomHourStart = Math.floor(Math.random() * 12) + 1;
-    const randomMinuteStart = Math.floor(Math.random() * 60);
-    const randomHourEnd = randomHourStart + Math.floor(Math.random() * 3) + 1;
-    const randomMinuteEnd = Math.floor(Math.random() * 60);
-    const ampm = Math.random() < 0.5 ? "am" : "pm";
+    const randomHourStart = Math.floor(Math.random() * 12) + 1
+    const randomMinuteStart = Math.floor(Math.random() * 60)
+    const randomHourEnd = randomHourStart + Math.floor(Math.random() * 3) + 1
+    const randomMinuteEnd = Math.floor(Math.random() * 60)
+    const ampm = Math.random() < 0.5 ? 'am' : 'pm'
 
     return `${randomHourStart}:${String(randomMinuteStart).padStart(
       2,
-      "0"
+      '0',
     )}${ampm} - ${randomHourEnd}:${String(randomMinuteEnd).padStart(
       2,
-      "0"
-    )}${ampm}`;
-  };
+      '0',
+    )}${ampm}`
+  }
 
   const getRandomClass = () => {
     const classes = [
-      "Badminton Class",
-      "Yoga Class",
-      "Dance Class",
-      "Meditation",
-    ];
-    return classes[Math.floor(Math.random() * classes.length)];
-  };
+      'Badminton Class',
+      'Yoga Class',
+      'Dance Class',
+      'Meditation',
+    ]
+    return classes[Math.floor(Math.random() * classes.length)]
+  }
 
   const getRandomStudentName = () => {
-    const firstNames = ["Jonas", "Alice", "Bob", "Eva", "Michael", "Olivia"];
+    const firstNames = ['Jonas', 'Alice', 'Bob', 'Eva', 'Michael', 'Olivia']
     const lastNames = [
-      "Smith",
-      "Johnson",
-      "Williams",
-      "Jones",
-      "Brown",
-      "Davis",
-    ];
+      'Smith',
+      'Johnson',
+      'Williams',
+      'Jones',
+      'Brown',
+      'Davis',
+    ]
     return `${firstNames[Math.floor(Math.random() * firstNames.length)]} ${
       lastNames[Math.floor(Math.random() * lastNames.length)]
-    }`;
-  };
+    }`
+  }
 
   const generateRandomScheduleData = () => {
-    const numberOfEntries = 8;
-    const data = [];
+    const numberOfEntries = 8
+    const data = []
 
     for (let i = 1; i <= numberOfEntries; i++) {
       data.push({
@@ -77,13 +74,13 @@ const Table = () => {
           getRandomStudentName(),
           getRandomStudentName(),
         ],
-      });
+      })
     }
 
-    return data;
-  };
+    return data
+  }
 
-  const scheduleData = generateRandomScheduleData();
+  const scheduleData = generateRandomScheduleData()
 
   return (
     <div className="h-[26rem] bg-white p-4 rounded shadow">
@@ -94,33 +91,33 @@ const Table = () => {
           <CiFilter size={28} />
           <button
             className={`w-24 h-8 rounded-lg text-white ${
-              activeButton === "All" ? "bg-gray-600" : "bg-gray-400"
+              activeButton === 'All' ? 'bg-gray-600' : 'bg-gray-400'
             }`}
-            onClick={() => handleButtonClick("All")}
+            onClick={() => handleButtonClick('All')}
           >
             All
           </button>
           <button
             className={`w-24 h-8 rounded-lg text-white ${
-              activeButton === "Classes" ? "bg-gray-600" : "bg-gray-400"
+              activeButton === 'Classes' ? 'bg-gray-600' : 'bg-gray-400'
             }`}
-            onClick={() => handleButtonClick("Classes")}
+            onClick={() => handleButtonClick('Classes')}
           >
             Classes
           </button>
           <button
             className={`w-24 h-8 rounded-lg text-white ${
-              activeButton === "Meetings" ? "bg-gray-600" : "bg-gray-400"
+              activeButton === 'Meetings' ? 'bg-gray-600' : 'bg-gray-400'
             }`}
-            onClick={() => handleButtonClick("Meetings")}
+            onClick={() => handleButtonClick('Meetings')}
           >
             Meetings
           </button>
           <button
             className={`w-24 h-8 rounded-lg text-white ${
-              activeButton === "Events" ? "bg-gray-600" : "bg-gray-400"
+              activeButton === 'Events' ? 'bg-gray-600' : 'bg-gray-400'
             }`}
-            onClick={() => handleButtonClick("Events")}
+            onClick={() => handleButtonClick('Events')}
           >
             Events
           </button>
@@ -153,7 +150,7 @@ const Table = () => {
                 <td className="py-2 text-left">{entry.date}</td>
                 <td className="py-2 text-left">{entry.timeInterval}</td>
                 <td className="py-2 text-left">{entry.class}</td>
-                <td className="py-2 text-left">{entry.students.join(", ")}</td>
+                <td className="py-2 text-left">{entry.students.join(', ')}</td>
                 <td className="py-2 text-left text-blue-400">
                   <a href="#">View</a>
                 </td>
@@ -163,7 +160,7 @@ const Table = () => {
         </table>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Table;
+export default Table

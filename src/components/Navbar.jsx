@@ -1,6 +1,6 @@
-import React from "react";
-import { IoSettingsOutline, IoNotificationsOutline } from "react-icons/io5";
-import ProfileImg from "../images/pfp.jpg";
+import React from 'react'
+import { IoSettingsOutline, IoNotificationsOutline } from 'react-icons/io5'
+import ProfileImg from '../images/pfp.jpg'
 
 const Navbar = () => {
   return (
@@ -42,7 +42,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

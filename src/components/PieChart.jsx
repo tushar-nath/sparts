@@ -1,41 +1,41 @@
-import React from "react";
-import Dropdown from "react-dropdown-select";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Pie } from "react-chartjs-2";
+import React from 'react'
+import Dropdown from 'react-dropdown-select'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
+import { Pie } from 'react-chartjs-2'
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip, Legend)
 
 const PieChart = () => {
   const dropdownOptions = [
-    { value: "30 days", label: "30 days" },
-    { value: "60 days", label: "60 days" },
-    { value: "90 days", label: "90 days" },
-  ];
+    { value: '30 days', label: '30 days' },
+    { value: '60 days', label: '60 days' },
+    { value: '90 days', label: '90 days' },
+  ]
 
   // Sample data for the pie chart
   const pieChartData = {
-    labels: ["Amount Pending", "Amount Received"],
+    labels: ['Amount Pending', 'Amount Received'],
     datasets: [
       {
         data: [25, 75],
-        backgroundColor: ["#ff7043", "#546e7a"],
+        backgroundColor: ['#ff7043', '#546e7a'],
       },
     ],
-  };
+  }
 
   const pieChartOptions = {
     maintainAspectRatio: false,
     responsive: true,
     plugins: {
       legend: {
-        position: "bottom",
+        position: 'bottom',
         labels: {
           usePointStyle: true,
           padding: 20,
         },
       },
     },
-  };
+  }
 
   return (
     <div className="flex-1 mr-4 w-96">
@@ -82,7 +82,7 @@ const PieChart = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PieChart;
+export default PieChart

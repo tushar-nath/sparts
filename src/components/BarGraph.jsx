@@ -1,40 +1,40 @@
-import React from "react";
-import Dropdown from "react-dropdown-select";
-import { Chart as ChartJS, registerables } from "chart.js";
-import { Bar } from "react-chartjs-2";
+import React from 'react'
+import Dropdown from 'react-dropdown-select'
+import { Chart as ChartJS, registerables } from 'chart.js'
+import { Bar } from 'react-chartjs-2'
 
-ChartJS.register(...registerables);
+ChartJS.register(...registerables)
 
 const BarGraph = () => {
   const dropdownOptions = [
-    { value: "30 days", label: "30 days" },
-    { value: "60 days", label: "60 days" },
-    { value: "90 days", label: "90 days" },
-  ];
+    { value: '30 days', label: '30 days' },
+    { value: '60 days', label: '60 days' },
+    { value: '90 days', label: '90 days' },
+  ]
 
   const barChartData1 = {
     labels: ["Jun '23", "July '23", "Aug '23"],
     datasets: [
       {
-        label: "Fee Received",
-        backgroundColor: ["#546e7a", "#546e7a", "#546e7a"],
+        label: 'Fee Received',
+        backgroundColor: ['#546e7a', '#546e7a', '#546e7a'],
         data: [20, 30, 40],
-        indexAxis: "x",
+        indexAxis: 'x',
       },
     ],
-  };
+  }
 
   const barChartData2 = {
     labels: ["Jun '23", "July '23", "Aug '23"],
     datasets: [
       {
-        label: "Active Students",
-        backgroundColor: ["#78909c", "#78909c", "#78909c"],
+        label: 'Active Students',
+        backgroundColor: ['#78909c', '#78909c', '#78909c'],
         data: [20, 30, 40],
-        indexAxis: "x",
+        indexAxis: 'x',
       },
     ],
-  };
+  }
 
   const barChartOptions = {
     maintainAspectRatio: false,
@@ -49,14 +49,14 @@ const BarGraph = () => {
     },
     plugins: {
       legend: {
-        position: "bottom",
+        position: 'bottom',
         labels: {
           usePointStyle: true,
           padding: 20,
         },
       },
     },
-  };
+  }
 
   return (
     <div className="flex-1 w-1/2">
@@ -109,14 +109,14 @@ const BarGraph = () => {
             <div className="w-1/2 flex-column">
               <div className="mt-2 ml-4 text-gray-500">Students</div>
               <div className="px-4 mt-1 h-80">
-                <Bar data={barChartData2} options={barChartOptions} />{" "}
+                <Bar data={barChartData2} options={barChartOptions} />{' '}
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BarGraph;
+export default BarGraph

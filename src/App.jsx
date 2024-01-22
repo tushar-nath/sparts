@@ -1,8 +1,8 @@
-import "tailwindcss/tailwind.css";
-import React from "react";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import Dashboard from './components/Dashboard';
+import 'tailwindcss/tailwind.css'
+import React from 'react'
+import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
+import Dashboard from './components/Dashboard'
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
         </main>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
