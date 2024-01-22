@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Dropdown from 'react-dropdown-select'
 import { Chart as ChartJS, registerables } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
@@ -6,34 +6,21 @@ import { Bar } from 'react-chartjs-2'
 ChartJS.register(...registerables)
 
 const BarGraph = () => {
+  const [chartData, setChartData] = useState({})
   const dropdownOptions = [
     { value: '30 days', label: '30 days' },
     { value: '60 days', label: '60 days' },
     { value: '90 days', label: '90 days' },
   ]
 
-  const barChartData1 = {
-    labels: ["Jun '23", "July '23", "Aug '23"],
-    datasets: [
-      {
-        label: 'Fee Received',
-        backgroundColor: ['#546e7a', '#546e7a', '#546e7a'],
-        data: [20, 30, 40],
-        indexAxis: 'x',
-      },
-    ],
-  }
+  useEffect(() => {
+    import('../barChartData.json').then((data) => {
+      setChartData(data.default)
+    })
+  }, [])
 
-  const barChartData2 = {
-    labels: ["Jun '23", "July '23", "Aug '23"],
-    datasets: [
-      {
-        label: 'Active Students',
-        backgroundColor: ['#78909c', '#78909c', '#78909c'],
-        data: [20, 30, 40],
-        indexAxis: 'x',
-      },
-    ],
+  if (!chartData || !chartData.barChartData1 || !chartData.barChartData2) {
+    return <div>Loading...</div>
   }
 
   const barChartOptions = {
@@ -102,14 +89,14 @@ const BarGraph = () => {
             <div className="w-1/2 flex-column">
               <div className="mt-2 ml-4 text-gray-500">Revenue</div>
               <div className="px-4 mt-1 h-80">
-                <Bar data={barChartData1} options={barChartOptions} />
+                <Bar data={chartData.barChartData1} options={barChartOptions} />
               </div>
             </div>
             <div className="border-l border-gray-200"></div>
             <div className="w-1/2 flex-column">
               <div className="mt-2 ml-4 text-gray-500">Students</div>
               <div className="px-4 mt-1 h-80">
-                <Bar data={barChartData2} options={barChartOptions} />{' '}
+                <Bar data={chartData.barChartData2} options={barChartOptions} />
               </div>
             </div>
           </div>

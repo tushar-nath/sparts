@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Dropdown from 'react-dropdown-select'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Pie } from 'react-chartjs-2'
@@ -6,22 +6,18 @@ import { Pie } from 'react-chartjs-2'
 ChartJS.register(ArcElement, Tooltip, Legend)
 
 const PieChart = () => {
+  const [pieChartData, setPieChartData] = useState({})
   const dropdownOptions = [
     { value: '30 days', label: '30 days' },
     { value: '60 days', label: '60 days' },
     { value: '90 days', label: '90 days' },
   ]
 
-  // Sample data for the pie chart
-  const pieChartData = {
-    labels: ['Amount Pending', 'Amount Received'],
-    datasets: [
-      {
-        data: [25, 75],
-        backgroundColor: ['#ff7043', '#546e7a'],
-      },
-    ],
-  }
+  useEffect(() => {
+    import('../pieChartData.json').then((data) => {
+      setPieChartData(data.default)
+    })
+  }, [])
 
   const pieChartOptions = {
     maintainAspectRatio: false,
@@ -35,6 +31,10 @@ const PieChart = () => {
         },
       },
     },
+  }
+
+  if (!pieChartData || !pieChartData.labels || !pieChartData.datasets) {
+    return <div>Loading...</div> // You can replace this with a loading indicator or error message
   }
 
   return (

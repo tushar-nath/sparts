@@ -1,0 +1,9 @@
+{
+  "labels": ["Amount Pending", "Amount Received"],
+  "datasets": [
+    {
+      "data": [25, 75],
+      "backgroundColor": ["#ff7043", "#546e7a"]
+    }
+  ]
+}
