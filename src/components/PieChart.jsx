@@ -34,7 +34,7 @@ const PieChart = () => {
   }
 
   if (!pieChartData || !pieChartData.labels || !pieChartData.datasets) {
-    return <div>Loading...</div> // You can replace this with a loading indicator or error message
+    return <div>Loading...</div>
   }
 
   return (
