@@ -49,6 +49,10 @@ To run the project locally, follow these steps:
 - Chart.js
 - React Dropdown Select
 
+## Screenshot
+
+<img width="1800" alt="Screenshot 2024-04-13 at 20 03 45" src="https://github.com/tushar-nath/sparts/assets/50198727/9c45c954-6822-46b5-818b-d4cda5d2d759">
+
 ## Contributing
 
 Feel free to contribute by opening issues or submitting pull requests.
